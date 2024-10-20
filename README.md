@@ -55,13 +55,13 @@ This project is a responsive admin panel built using Angular and PrimeNG. The pa
 
 ## Installation and Setup
 1. Clone the repository:
-  -- https://github.com/Salsabeal-Azzam/Admin-Panel.git
+git clone https://github.com/Salsabeal-Azzam/Admin-Panel.git
 2. Navigate to the project directory:
-  -- cd admin-panel
+   cd admin-panel
 3. Install the required dependencies:
-  -- npm install
+ npm install
 4. Run the application:
-  -- ng serve
+   ng serve
 
 
 ## Usage
