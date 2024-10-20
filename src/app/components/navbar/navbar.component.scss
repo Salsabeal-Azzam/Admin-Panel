@@ -1,0 +1,42 @@
+.custom-menubar {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  ::ng-deep {
+    .p-menubar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 9;
+      padding: 8px 16px;
+      .p-menubar-end {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        @media only screen and (max-width: 768px) {
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  .navbar-start {
+    align-items: center;
+    display: none;
+    @media only screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .navbar-end {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    ::ng-deep {
+      .p-button {
+        padding: 0;
+      }
+    }
+  }
+}

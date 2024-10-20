@@ -1,0 +1,71 @@
+<div class="categories">
+  <h2 class="title">Manage Categories</h2>
+
+  <form class="categories__form" (ngSubmit)="addCategory()">
+    <input
+      type="text"
+      class="input"
+      [(ngModel)]="newCategory"
+      name="category"
+      placeholder="Category Name"
+      required
+    />
+    <div class="btn-group">
+      <p-button
+        size="small"
+        [raised]="true"
+        type="submit"
+        [disabled]="!newCategory"
+        >{{ isEditing ? "Update" : "Add" }} Category</p-button
+      >
+      <p-button
+        size="small"
+        [raised]="true"
+        type="button"
+        label="Cancel"
+        [disabled]="!newCategory"
+        (onClick)="resetForm()"
+      />
+    </div>
+  </form>
+  @if(isLoading){
+  <app-spinner />
+  } @else {
+
+  <p-table [value]="categories" dataKey="id">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Category Name</th>
+        <th class="categories__actions">Actions</th>
+      </tr>
+    </ng-template>
+    @if (categories.length) {
+    <ng-template pTemplate="body" let-category>
+      <tr>
+        <td>{{ category.name }}</td>
+        <td>
+          <button
+            pButton
+            [text]="true"
+            (click)="editCategory(category)"
+            type="button"
+            icon="pi pi-pencil"
+          ></button>
+          <button
+            pButton
+            type="button"
+            icon="pi pi-trash"
+            severity="danger"
+            [text]="true"
+            (click)="deleteCategory(category.id)"
+          ></button>
+        </td>
+      </tr>
+    </ng-template>
+
+    }
+  </p-table>
+  } @if (!categories.length && !isLoading) {
+  <div class="categories__no-categories">There are no categories .</div>
+  }
+</div>

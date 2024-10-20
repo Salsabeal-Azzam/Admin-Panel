@@ -1,0 +1,25 @@
+<div
+  class="sidebar"
+  [ngClass]="{ 'show-side-bar': helperService.isSideBarShown }"
+>
+  <ul>
+    <li>
+      <a
+        (click)="helperService.isSideBarShown = false"
+        routerLink="/admin/products"
+        routerLinkActive="active-link"
+      >
+        <i class="pi pi-shopping-bag"></i> Products</a
+      >
+    </li>
+    <li>
+      <a
+        (click)="helperService.isSideBarShown = false"
+        routerLink="/admin/categories"
+        routerLinkActive="active-link"
+      >
+        <i class="pi pi-file"></i> Categories</a
+      >
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,20 @@
+<p-menubar class="custom-menubar">
+  <div class="navbar-start" (click)="toggleSideBar()">
+    <i class="pi pi-align-justify"></i>
+  </div>
+  <div class="navbar-end">
+    <p-avatar
+      icon="pi pi-user"
+      styleClass="mr-2"
+      [style]="{ 'background-color': '#dee9fc', color: '#1a2551' }"
+      shape="circle"
+    />
+    <button
+      pButton
+      label="Logout"
+      icon="pi pi-sign-out"
+      class="p-button-text"
+      (click)="onLogout()"
+    ></button>
+  </div>
+</p-menubar>

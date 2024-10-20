@@ -1,0 +1,11 @@
+.admin {
+  &__dashboard {
+    display: flex;
+    position: relative;
+    top: 50px;
+
+    .content {
+      width: 100%;
+    }
+  }
+}
