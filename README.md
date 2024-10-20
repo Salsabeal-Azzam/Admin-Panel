@@ -54,13 +54,13 @@ This project is a responsive admin panel built using Angular and PrimeNG. The pa
 - AuthGuard: Protects routes from being accessed by unauthenticated users. Redirects to the login page if a user is not logged in.
 
 ## Installation and Setup
-1- Clone the repository:
+1. Clone the repository:
   -- git clone https://github.com/Salsabeal-Azzam/Admin-Panel/.git
-2- Navigate to the project directory:
+2. Navigate to the project directory:
   -- cd admin-panel
-3- Install the required dependencies:
+3. Install the required dependencies:
   -- npm install
-4- Run the application:
+4. Run the application:
   -- ng serve
 
 
