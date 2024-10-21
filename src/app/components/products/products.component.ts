@@ -51,7 +51,7 @@ export class ProductsComponent implements OnInit {
       title: [''],
       price: [''],
       description: [''],
-      image: [''],
+      image: [],
       category: [''],
     });
   }
@@ -104,7 +104,6 @@ export class ProductsComponent implements OnInit {
           },
           error: (err) => {
             console.error('Error updating products:', err);
-
           },
         });
     } else {
@@ -116,7 +115,6 @@ export class ProductsComponent implements OnInit {
           },
           error: (err) => {
             console.error('Error adding product:', err);
-
           },
         });
     }
@@ -124,15 +122,14 @@ export class ProductsComponent implements OnInit {
   }
 
   deleteProduct(productID: number): void {
-    this.productService.deleteProduct(productID).subscribe(
-      {
-        next:() => {
-          this.products = this.products.filter(
-            (product:Product) => product.id !== productID
-          );
-        },
-        error:(error)=> console.error('Error deleting product : ',error)
-      });
+    this.productService.deleteProduct(productID).subscribe({
+      next: () => {
+        this.products = this.products.filter(
+          (product: Product) => product.id !== productID
+        );
+      },
+      error: (error) => console.error('Error deleting product : ', error),
+    });
   }
 
   updateProductList(productID: number | null = null): void {
@@ -147,7 +144,12 @@ export class ProductsComponent implements OnInit {
     } else {
       this.products = [
         ...this.products,
-        { id: this.products.length + 1, ...this.addOrUpdateProductForm.value },
+        {
+          id: this.products.length + 1,
+          ...this.addOrUpdateProductForm.value,
+          rating: { count: 120, rate: 3.9 },
+          image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
+        },
       ];
     }
   }
